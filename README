@@ -1,0 +1,13 @@
+# Python 2.7 virtual environment
+# 
+# Created with:
+# > conda create -n env python=2.7
+# 
+# To activate this environment, use:
+# > source activate venv
+#
+# To deactivate an active environment, use:
+# > source deactivate
+#
+# To Run the server:
+# python clinicalscores.py runserver
