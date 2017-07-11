@@ -1,48 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Flaskr</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-  <div class="page">
+{% block title %}Clinical Scores{% endblock %}
 
-    <h1>Flaskr-TDD</h1>
-    <div class="metanav">
-      {% if not session.logged_in %}
-        <a href="{{ url_for('login') }}">log in</a>
-      {% else %}
-        <a href="{{ url_for('logout') }}">log out</a>
-      {% endif %}
+{% block page_content %}
+<div class="cpontainer">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Clinical Scores</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
     </div>
-    {% for message in get_flashed_messages() %}
-      <div class="flash">{{ message }}</div>
-    {% endfor %}
-    {% block body %}{% endblock %}
 
-    {% if session.logged_in %}
-      <form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
-        <dl>
-          <dt>Title:</dt>
-          <dd><input type="text" size="30" name="title"></dd>
-          <dt>Text:</dt>
-          <dd><textarea name="text" rows="5" cols="40"></textarea></dd>
-          <dd><input type="submit" value="Share"></dd>
-        </dl>
-      </form>
-    {% endif %}
-    <ul class="entries">
-      {% for entry in entries %}
-        <li class="entry"><h2 id={{ entry.id }}>{{ entry.title }}</h2>{{ entry.text|safe }}</li>
-      {% else %}
-        <li><em>No entries yet. Add some!</em></li>
-      {% endfor %}
-    </ul>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
 
-  </div>
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{{url_for('static', filename='main.js') }}"></script>
-</body>
-</html>
+      <hr>
+
+      <footer>
+        <p>&copy; 2017 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+</div>
+
+{% endblock %}

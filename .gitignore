@@ -27,6 +27,9 @@ pip-log.txt
 .tox
 nosetests.xml
 
+# OSX noise
+*.DS_Store
+
 # Translations
 *.mo
 
