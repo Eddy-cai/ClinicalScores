@@ -6,10 +6,12 @@
 {{ super() }}
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <script src="/static/main.js"></script>
 {% endblock %}
 
 {% block navbar %}
-<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,6 +25,11 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
+                <li><a href="/aboutus">About us</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/browse">Browse</a></li>
+                <li><a href="/getinvolved">Get Involved</a></li>
             </ul>
         </div>
     </div>
@@ -33,4 +40,7 @@
 <div class="container">
     {% block page_content %}{% endblock %}
 </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 {% endblock %}
+
+
