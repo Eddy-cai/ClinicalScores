@@ -50,3 +50,6 @@ To run tests:
 ```bash
 python functional_tests.py
 ```
+
+## about me 
+THis is an web app!
